@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/superfly/wg6pn/internal/flywg"
+	"github.com/eliferrous/wg6pn/internal/flywg"
 )
 
 // status serves tunnel state as JSON on loopback.

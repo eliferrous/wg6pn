@@ -17,7 +17,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/superfly/wg6pn/internal/flywg"
+	"github.com/eliferrous/wg6pn/internal/flywg"
 )
 
 func main() {

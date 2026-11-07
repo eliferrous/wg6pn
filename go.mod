@@ -1,4 +1,4 @@
-module github.com/superfly/wg6pn
+module github.com/eliferrous/wg6pn
 
 go 1.26.3
 
