@@ -1,0 +1,19 @@
+Copied from github.com/superfly/flyctl, package wg, at commit 3b3a0588b
+(Apache-2.0, see LICENSE in this directory).
+
+wg6pn changes, each marked "wg6pn addition" in the source:
+- package renamed to flywg; flyctl-internal logger/terminal imports removed
+  (WG6PN_WG_DEBUG=1 enables verbose WireGuard logs)
+- Config.PeerAddr: the provisioned peer IP is added as a second netstack
+  address, so inbound connections to it are accepted
+- Tunnel.ListenTCP, Tunnel.Addrs, and a rebuild channel closed on reprovision
+- removed a stray debug print in the resolver
+- PersistentKeepAlive (25s) and the peer address on both token-mode and
+  API-registered tunnels (legacyTunnelConfig): the websocket plugboard drops
+  inbound frames until the device has sent once
+- removed a stray debug print in doConnect
+- inbound_test.go: real WireGuard inbound path, and device-speaks-first
+- TestListenTCPAcrossReprovision in ws_token_test.go
+
+wg6pn connects with ConnectWS only. The token-mode code (ConnectToken,
+token.go and its websocket handling) is kept from upstream but unused.
